@@ -62,10 +62,37 @@ public class ArrayManipulationQues {
         }
         return mod;
     }
+
+    static void getHighestLowest(int[] arr){
+        HashMap<Integer,Integer> countFreq= new HashMap<>();
+        for (int n:arr){
+            countFreq.put(n, countFreq.getOrDefault(n,0)+1);
+        }
+        int MaxFreq= Integer.MIN_VALUE;
+        int MaxFreqNum=-1;
+
+        int MinFreq=Integer.MAX_VALUE;
+        int MinFreqNum=-1;
+
+        for (int key:countFreq.keySet()){
+            if(countFreq.get(key)>MaxFreq){
+                MaxFreq=countFreq.get(key);
+                MaxFreqNum=key;
+            }
+            if(countFreq.get(key)<MinFreq){
+                MinFreq=countFreq.get(key);
+                MinFreqNum=key;
+            }
+        }
+        System.out.println("Highest freq is"+" "+MaxFreq+" "+"of"+" "+MaxFreqNum);
+        System.out.println("Lowest freq is"+" "+MinFreq+" "+"of"+" "+MinFreqNum);
+
+    }
     static void main(String[] args) {
         int[] arr = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5, 5};
-        int ans=modOfArray(arr);
-        System.out.println("Mod is"+" "+ans);
+        getHighestLowest(arr);
+        //int ans=modOfArray(arr);
+        //System.out.println("Mod is"+" "+ans);
         //printExtremeAlt(arr);
         //shiftArrayElementBy1(arr);
         //reverseArray(arr);
