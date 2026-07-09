@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.HashMap;
+
 public class ArrayManipulationQues {
     static void reverseArray(int[] arr){
         int left=0;
@@ -45,12 +47,26 @@ public class ArrayManipulationQues {
         }
     }
 
-    static void countFrequency(int[] arr){
-        
+    static int modOfArray(int[] arr){
+        HashMap<Integer,Integer> freq= new HashMap<>();
+        for(int n:arr){
+            freq.put(n,freq.getOrDefault(n,0)+1);
+        }
+        int maxFreq=-1;
+        int mod=-1;
+        for (int key: freq.keySet()){
+            if (freq.get(key)>maxFreq){
+                maxFreq=freq.get(key);
+                mod=key;
+            }
+        }
+        return mod;
     }
     static void main(String[] args) {
-        int[] arr={10, 20, 30, 40, 50,60};
-        printExtremeAlt(arr);
+        int[] arr = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5, 5};
+        int ans=modOfArray(arr);
+        System.out.println("Mod is"+" "+ans);
+        //printExtremeAlt(arr);
         //shiftArrayElementBy1(arr);
         //reverseArray(arr);
 //        for(int n:arr){
