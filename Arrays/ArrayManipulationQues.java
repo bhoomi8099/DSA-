@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class ArrayManipulationQues {
     static void reverseArray(int[] arr){
@@ -86,11 +87,42 @@ public class ArrayManipulationQues {
         }
         System.out.println("Highest freq is"+" "+MaxFreq+" "+"of"+" "+MaxFreqNum);
         System.out.println("Lowest freq is"+" "+MinFreq+" "+"of"+" "+MinFreqNum);
+    }
 
+    static void shiftBy_K_Element(int[] arr,int k){
+        int[] temp= new int[arr.length];
+        for (int i=0;i<arr.length;i++){
+            int newIndex= (i+k)%(arr.length);   //circular array
+            temp[newIndex]=arr[i];
+        }
+        System.out.println("Shifted array by"+" "+k+" "+"elements");
+        for (int n:temp){
+            System.out.print(" "+n+" ");
+        }
+    }
+
+    static void unionOfArrays(int[] arr1,int[] arr2){
+        HashSet<Integer> Element=new HashSet<>();
+        HashSet<Integer> Element2=new HashSet<>();
+        for(int n:arr1){
+            Element.add(n);
+        }
+        for (int p:arr2){
+            Element2.add(p);
+        }
+        Element.addAll(Element2);
+
+        System.out.println(Element);
     }
     static void main(String[] args) {
-        int[] arr = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5, 5};
-        getHighestLowest(arr);
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = {3, 4, 5, 6, 7};
+        unionOfArrays(arr1,arr2);
+
+//        int[] arr = {10, 20, 30, 40, 50};
+//        int k=3;
+//        shiftBy_K_Element(arr,k);
+        //getHighestLowest(arr);
         //int ans=modOfArray(arr);
         //System.out.println("Mod is"+" "+ans);
         //printExtremeAlt(arr);
