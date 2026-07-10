@@ -116,7 +116,7 @@ public class ArrayManipulationQues {
     }
     static void main(String[] args) {
         int[] arr1 = {1, 2, 3, 4, 5};
-        int[] arr2 = {3, 4, 5, 6, 7};
+        int[] arr2 = {3, 4, 5, 6,3,7};
         unionOfArrays(arr1,arr2);
 
 //        int[] arr = {10, 20, 30, 40, 50};
