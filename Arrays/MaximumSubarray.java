@@ -1,3 +1,5 @@
+package Arrays;
+
 public class MaximumSubarray {
     static int maxSubarray(int[] nums){
         int sum=0;
