@@ -1,6 +1,8 @@
 package Sorting;
 
-public class Bubblesort {
+import java.util.Arrays;
+
+public class TypesOfSort {
     static void bubbleSort(int[] arr){
         int n=arr.length;
         for(int i=0;i<n-1;i++){
@@ -30,12 +32,26 @@ public class Bubblesort {
         }
     }
 
+    static void insertionSort(int[] arr){
+        for (int i=1;i<arr.length;i++){
+            int currentCard=arr[i];
+            int j=i-1;
+            while(j>=0 && arr[j]>currentCard){
+                arr[j+1]=arr[j];
+                j--;
+            }
+            arr[j+1]=currentCard;
+        }
+    }
+
     static void main(String[] args) {
         int[] arr={5,3,7,2,1,9};
-        selectionSort(arr);
+        //selectionSort(arr);
         //bubbleSort(arr);
-        for(int n:arr){
-            System.out.print(n+" ");
-        }
+        insertionSort(arr);
+        System.out.println(Arrays.toString(arr));
+//        for(int n:arr){
+//            System.out.print(n+" ");
+//        }
     }
 }
