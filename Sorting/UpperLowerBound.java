@@ -26,7 +26,7 @@ public class UpperLowerBound {
         int n = arr.length;
         int start = 0;
         int end = n - 1;
-        int ans = n;
+        int ans1 = n;
         while (start <= end) {
             int mid = (start + end) / 2;
             if (arr[mid] <= target) {
@@ -34,12 +34,12 @@ public class UpperLowerBound {
                 start = mid + 1;
             } else {
                 //store ans
-                ans=mid;
+                ans1=mid;
                 //move to left
                 end = mid - 1;
             }
         }
-        return ans;
+        return ans1;
     }
 
     static void main(String[] args) {
