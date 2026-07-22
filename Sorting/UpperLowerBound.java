@@ -44,7 +44,7 @@ public class UpperLowerBound {
 
     static void main(String[] args) {
         int[] arr={10,20,30,30,30,30,30,40,50};
-        int target=35;
+        int target=32;
         int result=getUpperBound(arr,target);
         //int result=getLowerBound(arr,target);
         System.out.println(result);
