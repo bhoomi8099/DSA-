@@ -66,7 +66,7 @@ public class BookAllocation {
     }
 
     static void main(String[] args) {
-        int[] arr={10,20,30,40,50};
+        int[] arr={10,20,30,40,50,60,80};
         int k= 2;
         int result= findPages(arr,k);
         System.out.println(result);
